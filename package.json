@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "node": "^20.3.1"
+  },
+  "name": "ideaapp",
+  "version": "1.0.0",
+  "description": "This is an Idea application",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikarnjha/IdeaApp.git"
+  },
+  "keywords": [
+    "git",
+    "initilization"
+  ],
+  "author": "Vikarn Jha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vikarnjha/IdeaApp/issues"
+  },
+  "homepage": "https://github.com/vikarnjha/IdeaApp#readme"
+}
