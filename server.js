@@ -1,8 +1,8 @@
-const express = require('express');
-const serverConfig = require('./configs/server.config');
-const { default: mongoose } = require('mongoose');
-const dbConfig = require('./configs/db.config');
-const userModel = require('./models/user.model');
+const express = require("express");
+const serverConfig = require("./configs/server.config");
+const { default: mongoose } = require("mongoose");
+const dbConfig = require("./configs/db.config");
+const userModel = require("./models/user.model");
 
 const app = express();
 /**
@@ -19,34 +19,29 @@ db.once("open", () => {
   init();
 });
 
-async function  init(){
-    
-    /**
-     * Check if the admin user is already present
-     */
-    let admin = await userModel.findOne({
-        userId : "admin"
-    })
+async function init() {
+  /**
+   * Check if the admin user is already present
+   */
+  let admin = await userModel.findOne({
+    userId: "admin",
+  });
 
-    if(admin){
-        console.log("Admin user already present");
-        return;
-    }
+  if (admin) {
+    console.log("Admin user already present");
+    return;
+  }
 
-    admin = await userModel.create( {
-        name : "Vikarn Jha",
-        userId : "admin",
-        email : "vikarnjha91@gmail.com",
-        userType : "Admin",
-        password : "Welcome"
-    });
-    console.log(admin);
-
-    
+  admin = await userModel.create({
+    name: "Vikarn Jha",
+    userId: "admin",
+    email: "vikarnjha91@gmail.com",
+    userType: "Admin",
+    password: "Welcome",
+  });
+  console.log(admin);
 }
 
-
-
-app.listen(serverConfig.PORT, ()=>{
-    console.log(`server started on the port number ${serverConfig.PORT}` );
-})
+app.listen(serverConfig.PORT, () => {
+  console.log(`Server started on the port number ${serverConfig.PORT}`);
+});
